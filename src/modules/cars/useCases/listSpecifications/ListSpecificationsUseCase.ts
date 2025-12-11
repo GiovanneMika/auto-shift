@@ -1,10 +1,11 @@
 import { Specification } from "../../model/Specification";
 import { SpecificationsRepository } from "../../repositories/implementations/SpecificationsRepository";
+import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
 
 class ListSpecificationsUseCase {
 
-    constructor(private specificationsRepository: SpecificationsRepository) {
+    constructor(private specificationsRepository: ISpecificationsRepository) {
     }
 
     execute(): Specification[] {

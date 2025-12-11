@@ -4,15 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "csv-parse": "^6.1.0",
     "eslint": "8",
     "express": "^5.2.1",
+    "multer": "^2.0.2",
     "uuid": "^13.0.0"
   },
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
   },
   "devDependencies": {
+    "@types/csv-parse": "^1.2.5",
     "@types/express": "^5.0.6",
+    "@types/multer": "^2.0.0",
     "@types/uuid": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",

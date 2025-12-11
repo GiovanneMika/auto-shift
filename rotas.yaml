@@ -1,0 +1,215 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: AutoShift
+meta:
+  id: wrk_5842febb49ee4602b78fc43a10c7fe21
+  created: 1765376399418
+  modified: 1765453930239
+  description: ""
+collection:
+  - url: "{{ _._baseurl }}/courses"
+    name: Cadastrar curso
+    meta:
+      id: req_163004c79f504029b6ab99e340bddef4
+      created: 1765376818084
+      modified: 1765455240478
+      isPrivate: false
+      description: ""
+      sortKey: -1765453954611
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "NodeJS"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.1.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Categories
+    meta:
+      id: fld_22bde100cdae44cdac867ce58444c27a
+      created: 1765378855046
+      modified: 1765455226831
+      sortKey: -1765416404803.5
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/categories"
+        name: Create
+        meta:
+          id: req_e2b0ebb8be7c46d481ca11b93b9f41b1
+          created: 1765378449204
+          modified: 1765461931176
+          isPrivate: false
+          description: ""
+          sortKey: -1765378860129
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "SUV2",
+            	"description": "Veículos utilitários esportivos"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/categories"
+        name: Search
+        meta:
+          id: req_3d196427d26a4bf9ad684a19c35d3070
+          created: 1765384679346
+          modified: 1765384712303
+          isPrivate: false
+          description: ""
+          sortKey: -1765378860229
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/categories/import"
+        name: import
+        meta:
+          id: req_1197ff0ca8a64255a43faf6bed90fb7c
+          created: 1765471089553
+          modified: 1765471609050
+          isPrivate: false
+          description: ""
+          sortKey: -1765378860029
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: file
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\giova\Desktop\arquivo.csv
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Specifications
+    meta:
+      id: fld_5fa1d5064a7542f6aa91dae3491216ab
+      created: 1765453954511
+      modified: 1765453954511
+      sortKey: -1765453954511
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/specifications"
+        name: Search
+        meta:
+          id: req_0dea7aff536b40d39d667009e326fa30
+          created: 1765453937020
+          modified: 1765455460391
+          isPrivate: false
+          description: ""
+          sortKey: -1765455216327
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/specifications"
+        name: Create
+        meta:
+          id: req_bef6f5ac7fbb4392bd2c487231e32d37
+          created: 1765455261888
+          modified: 1765466377136
+          isPrivate: false
+          description: ""
+          sortKey: -1765455261888
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"Câmbio automático",
+            	"description": "AutoShifter"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_972df7d3dba0143e72adca5c8787fb7d724ec8da
+    created: 1765376399422
+    modified: 1765376399422
+environments:
+  name: Base Environment
+  meta:
+    id: env_972df7d3dba0143e72adca5c8787fb7d724ec8da
+    created: 1765376399420
+    modified: 1765376855173
+    isPrivate: false
+  data:
+    _baseurl: localhost:3333
