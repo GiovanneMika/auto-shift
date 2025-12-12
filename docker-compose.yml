@@ -3,6 +3,7 @@ version: "5.0.0"
 services:
   app:
     build: .
+    container_name: autoshift
     ports:
       - "3333:3333"
     volumes:
