@@ -1,8 +1,8 @@
 {
     "type": "postgres",
-    "host": "localhost",
+    "host": "database_ignite",
     "port": 5432,
-    "username": "your_username",
-    "password": "your_password",
+    "username": "docker",
+    "password": "ignite",
     "database": "autoshift"
 }
