@@ -1,5 +1,7 @@
-import { Category } from "../../model/Category";
+import { Category } from "../../entities/Category";
 import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesRepository";
+
+import { Repository } from "typeorm";
 
 
 
@@ -13,7 +15,7 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     public static getInstance(): CategoriesRepository {
-        if(!CategoriesRepository.INSTANCE){
+        if (!CategoriesRepository.INSTANCE) {
             CategoriesRepository.INSTANCE = new CategoriesRepository();
         }
         return CategoriesRepository.INSTANCE;
