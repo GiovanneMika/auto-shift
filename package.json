@@ -9,14 +9,16 @@
     "eslint": "8",
     "express": "^5.2.1",
     "multer": "^2.0.2",
-    "pg": "^8.16.3",
+    "pg": "8.7.3",
     "reflect-metadata": "^0.2.2",
     "swagger-ui-express": "^5.0.1",
-    "typeorm": "^0.3.28",
+    "tsyringe": "^4.10.0",
+    "typeorm": "0.2.41",
     "uuid": "^13.0.0"
   },
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   },
   "devDependencies": {
     "@types/csv-parse": "^1.2.5",

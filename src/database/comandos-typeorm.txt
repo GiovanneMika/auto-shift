@@ -1,0 +1,22 @@
+Comandos para administrar as migrations no typeORM 0.3 nesse projeto:
+    Pra criar nova migration:
+        yarn typeorm migration:create ./src/database/migrations/NomeDaMigration
+    Pra rodar as migration:
+        yarn typeorm migration:run -d ./src/data-source.ts
+
+    Pra desfazer as migration:
+        yarn typeorm migration:revert -d ./src/data-source.ts
+
+
+Comandos para administrar as migrations no typeORM 0.2 nesse projeto:
+    Pra criar nova migration:
+        yarn typeorm migration:create -n NomeDaMigration
+    Pra rodar as migrations:
+        yarn typeorm migration:run
+    Pra desfazer a última migration:
+        yarn typeorm migration:revert
+
+
+Informações adicionais:
+    -Pra rodar as migrations o host do ormconfig tem que ser localhost, mas na hora de rodar a aplicação mesmo o host
+    tem que ser o host do banco, no caso database_ignite
