@@ -51,7 +51,7 @@ collection:
         meta:
           id: req_e2b0ebb8be7c46d481ca11b93b9f41b1
           created: 1765378449204
-          modified: 1765461931176
+          modified: 1765820715810
           isPrivate: false
           description: ""
           sortKey: -1765378860129
@@ -60,7 +60,7 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"name": "SUV2",
+            	"name": "SUV12",
             	"description": "Veículos utilitários esportivos"
             }
         headers:
@@ -102,11 +102,11 @@ collection:
             store: true
           rebuildPath: true
       - url: "{{ _._baseurl }}/categories/import"
-        name: import
+        name: Import
         meta:
           id: req_1197ff0ca8a64255a43faf6bed90fb7c
           created: 1765471089553
-          modified: 1765471609050
+          modified: 1765887564918
           isPrivate: false
           description: ""
           sortKey: -1765378860029
@@ -148,7 +148,7 @@ collection:
         meta:
           id: req_0dea7aff536b40d39d667009e326fa30
           created: 1765453937020
-          modified: 1765455460391
+          modified: 1765885397663
           isPrivate: false
           description: ""
           sortKey: -1765455216327
@@ -171,7 +171,7 @@ collection:
         meta:
           id: req_bef6f5ac7fbb4392bd2c487231e32d37
           created: 1765455261888
-          modified: 1765466377136
+          modified: 1765907191469
           isPrivate: false
           description: ""
           sortKey: -1765455261888
@@ -180,8 +180,86 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"name":"Câmbio automático",
+            	"name":"Câmbio automático123",
             	"description": "AutoShifter"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjU5MDYyOTksImV4cCI6MTc2NTk5MjY5OSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.cq3L0Q64FvyhDH9vP7Tw0TAOWyn8Atuao_eZDO1M0aw
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Users
+    meta:
+      id: fld_4c9eb07c8b4a47d7bb6f72290f73baa1
+      created: 1765894424073
+      modified: 1765894424073
+      sortKey: -1765894424073
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/users"
+        name: Create
+        meta:
+          id: req_c8e67a4c07034112b5b22d068d936483
+          created: 1765894428825
+          modified: 1765895534190
+          isPrivate: false
+          description: ""
+          sortKey: -1765894428825
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Giovanne",
+            	"email": "givas@gmail.com",
+            	"password": "123456",
+            	"driver_license": "12345678901"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/sessions"
+        name: Session
+        meta:
+          id: req_e8d88cf46e6b4332ad21e0bb21eb1940
+          created: 1765903974722
+          modified: 1765905427048
+          isPrivate: false
+          description: ""
+          sortKey: -1765903974722
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "givas@gmail.com",
+            	"password": "123456"
             }
         headers:
           - name: Content-Type
