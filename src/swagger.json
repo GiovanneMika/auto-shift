@@ -12,7 +12,7 @@
         "/categories": {
             "post": {
                 "tags": [
-                    "Category"
+                    "Categories"
                 ],
                 "summary": "Create a category",
                 "description": "Create a new category of cars",
@@ -48,14 +48,14 @@
             },
             "get": {
                 "tags": [
-                    "Category"
+                    "Categories"
                 ],
                 "summary": "Search for all categories",
                 "description": "Search for all categories of the cars",
                 "responses": {
                     "200": {
                         "description": "Success",
-                        "content":{
+                        "content": {
                             "application/json": {
                                 "schema": {
                                     "type": "array",
@@ -74,6 +74,113 @@
                             }
                         }
                     }
+                }
+            }
+        },
+        "/categories/import": {
+            "post": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Import a csv with the categories",
+                "description": "Import categories from a CSV with name and description",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CSV imported sucessfully"
+                    }
+                }
+            }
+        },
+        "/specifications": {
+            "post": {
+                "tags": [
+                    "Specifications"
+                ],
+                "summary": "Create a specification",
+                "description": "Create a new specification for the cars",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Specification"
+                            },
+                            "example": {
+                                "name": "SpecificationTest",
+                                "description": "DescriptionTest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "specification created sucessfully!"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "message": "specification created sucessfully!"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Specification already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Specifications"
+                ],
+                "summary": "Search for all specifications",
+                "description": "Search for all specifications of the cars",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "#ref": "#/definitions/Specification"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Specification": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
                 }
             }
         }
