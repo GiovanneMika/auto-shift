@@ -8,10 +8,10 @@ import swaggerUI from 'swagger-ui-express';
 
 import swaggerFile from "./swagger.json";
 
-import "./shared/container";
+import "@shared/container";
 
 import "./database";
-import { AppError } from "./errors/AppError";
+import { AppError } from "@errors/AppError";
 
 const app = express();
 

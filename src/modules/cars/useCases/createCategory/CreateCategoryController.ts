@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository';
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 import { container } from "tsyringe";
 
