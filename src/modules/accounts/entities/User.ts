@@ -9,7 +9,7 @@ class User {
 
     @Column()
     name: string;
-    
+
     @Column()
     password: string;
 
@@ -17,7 +17,10 @@ class User {
     email: string;
 
     @Column()
-    isAdmin: boolean
+    isAdmin: boolean;
+
+    @Column()
+    avatar: string;
 
     @Column()
     driver_license: string;
@@ -26,7 +29,7 @@ class User {
     created_at: Date;
 
     constructor() {
-        if(!this.id){
+        if (!this.id) {
             this.id = uuidv4();
         }
     }
