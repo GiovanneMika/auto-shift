@@ -148,7 +148,7 @@ collection:
         meta:
           id: req_0dea7aff536b40d39d667009e326fa30
           created: 1765453937020
-          modified: 1765885397663
+          modified: 1765974481271
           isPrivate: false
           description: ""
           sortKey: -1765455216327
@@ -158,6 +158,8 @@ collection:
             value: insomnia/12.1.0
             description: ""
             disabled: false
+        authentication:
+          type: bearer
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -276,6 +278,43 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: "{{ _._baseurl }}/users/avatar"
+        name: Avatar
+        meta:
+          id: req_be21a85bea7b4b1d8130bab10bd0a6da
+          created: 1765975564058
+          modified: 1765975925815
+          isPrivate: false
+          description: ""
+          sortKey: -1765975564058
+        method: PATCH
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: avatar
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\giova\Downloads\avatar.jpg
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
@@ -287,7 +326,8 @@ environments:
   meta:
     id: env_972df7d3dba0143e72adca5c8787fb7d724ec8da
     created: 1765376399420
-    modified: 1765376855173
+    modified: 1765975910773
     isPrivate: false
   data:
     _baseurl: localhost:3333
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjU5NzU4NjcsImV4cCI6MTc2NjA2MjI2Nywic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.7PTzkXdxyrzZNg_q2ERzzU8W3loTb6K935X5c-XbCMA
