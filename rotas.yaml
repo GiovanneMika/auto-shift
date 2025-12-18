@@ -315,6 +315,86 @@ collection:
             send: true
             store: true
           rebuildPath: true
+      - url: "{{ _._baseurl }}/sessions"
+        name: Session Admin
+        meta:
+          id: req_f2b071edf3b442e5af99cfde14b2c694
+          created: 1766079153241
+          modified: 1766079171349
+          isPrivate: false
+          description: ""
+          sortKey: -1765899201773.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "admin@email.com",
+            	"password": "admin"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Cars
+    meta:
+      id: fld_6bdaf83b2c8e44a78e746b5ddafb27ef
+      created: 1766074308449
+      modified: 1766074308449
+      sortKey: -1766074308449
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/cars"
+        name: Create
+        meta:
+          id: req_f0c62a6b997a47d095074b284b715195
+          created: 1766074311421
+          modified: 1766079221321
+          isPrivate: false
+          description: ""
+          sortKey: -1766074311421
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Civic",
+              "description": "Sedan confortável",
+              "daily_rate": 250,
+              "license_plate": "ABC1D23",
+              "fine_amount": 1800,
+              "brand": "Honda",
+              "category_id": "f2b2b9e6-9857-4745-9008-6f2ea3c908ce"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
@@ -326,8 +406,9 @@ environments:
   meta:
     id: env_972df7d3dba0143e72adca5c8787fb7d724ec8da
     created: 1765376399420
-    modified: 1765975910773
+    modified: 1766079206786
     isPrivate: false
   data:
     _baseurl: localhost:3333
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjU5NzU4NjcsImV4cCI6MTc2NjA2MjI2Nywic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.7PTzkXdxyrzZNg_q2ERzzU8W3loTb6K935X5c-XbCMA
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjYwNzkwNDgsImV4cCI6MTc2NjE2NTQ0OCwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.0YujaIoW3JTaMdhAEyeaL2XBHo9nFEZWMecxQpzVcEc
+    adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjYwNzkxNzMsImV4cCI6MTc2NjE2NTU3Mywic3ViIjoiN2ZjZTU0Y2YtNmFhYi00Njk2LThlMzctNDBiYmZiODI3ODJmIn0.NX2I5w97_E8-lpuPN3u0fTT7oQw0A7xY1rX5_vFa4q4
