@@ -38,6 +38,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
         if (category_id) {
             availableCars = availableCars.filter(car => car.category_id === category_id);
         }
+        console.log(availableCars);
 
         return availableCars;
     }
