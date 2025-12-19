@@ -360,7 +360,7 @@ collection:
         meta:
           id: req_f0c62a6b997a47d095074b284b715195
           created: 1766074311421
-          modified: 1766079221321
+          modified: 1766148373117
           isPrivate: false
           description: ""
           sortKey: -1766074311421
@@ -369,19 +369,139 @@ collection:
           mimeType: application/json
           text: |-
             {
-              "name": "Civic",
-              "description": "Sedan confortável",
-              "daily_rate": 250,
-              "license_plate": "ABC1D23",
-              "fine_amount": 1800,
-              "brand": "Honda",
-              "category_id": "f2b2b9e6-9857-4745-9008-6f2ea3c908ce"
-            }
+                "name": "Fit",
+                "description": "Hatch versátil",
+                "daily_rate": 130,
+                "license_plate": "FIT2025",
+                "fine_amount": 950,
+                "brand": "Honda",
+                "category_id": "9ddff0b4-5327-4418-a5bc-504fa111ec1d"
+              }
         headers:
           - name: Content-Type
             value: application/json
           - name: User-Agent
             value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/cars/available"
+        name: Search Available
+        meta:
+          id: req_fbf193a11f0240cd8d7a9bd29679d58b
+          created: 1766147415017
+          modified: 1766157016738
+          isPrivate: false
+          description: ""
+          sortKey: -1766147415017
+        method: GET
+        parameters:
+          - name: brand
+            value: Chevrolet
+            description: ""
+            disabled: true
+          - name: name
+            value: S10
+            description: ""
+            disabled: true
+          - name: category_id
+            value: 9ddff0b4-5327-4418-a5bc-504fa111ec1d
+            description: ""
+            disabled: true
+          - name: category_id
+            value: d3c83e0a-8804-4f6c-beb9-ee20287a1703
+            description: ""
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/cars/specifications/74d63686-d461-4472-bb71-653bb661eaff"
+        name: Create Car Specifications
+        meta:
+          id: req_8673febd17cd46659c35eee86477d85c
+          created: 1766156875706
+          modified: 1766157202621
+          isPrivate: false
+          description: ""
+          sortKey: -1766156875706
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"specifications_id":[
+            		"cf3c6714-9b4d-4a2b-b2fa-b492cf163a1e",
+            		"ef39edc4-cdb3-4a2c-9fd5-9396e15e684e"
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/cars/images/74d63686-d461-4472-bb71-653bb661eaff"
+        name: Images
+        meta:
+          id: req_6b88a15027724b3cb21356e728ce02c2
+          created: 1766163596669
+          modified: 1766163867340
+          isPrivate: false
+          description: ""
+          sortKey: -1766163596669
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: images
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\giova\Downloads\pexels-mikebirdy-116675.jpg
+              type: file
+            - name: images
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\giova\Downloads\pexels-mikebirdy-244206.jpg
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.2.0
             description: ""
             disabled: false
         authentication:
