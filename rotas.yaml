@@ -51,7 +51,7 @@ collection:
         meta:
           id: req_e2b0ebb8be7c46d481ca11b93b9f41b1
           created: 1765378449204
-          modified: 1765820715810
+          modified: 1766417173055
           isPrivate: false
           description: ""
           sortKey: -1765378860129
@@ -60,7 +60,7 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"name": "SUV12",
+            	"name": "SUV12345",
             	"description": "Veículos utilitários esportivos"
             }
         headers:
@@ -515,6 +515,49 @@ collection:
             send: true
             store: true
           rebuildPath: true
+  - name: Rentals
+    meta:
+      id: fld_93c48a6f71424566a202301260af6df9
+      created: 1766412813591
+      modified: 1766412813591
+      sortKey: -1766412813591
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/rentals"
+        name: Create
+        meta:
+          id: req_74c5626400a9460fa09fcd9ad292f02e
+          created: 1766412818081
+          modified: 1766413689736
+          isPrivate: false
+          description: ""
+          sortKey: -1766412818081
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"expected_return_date": "2025-12-25T14:17:51.321Z",
+            	"car_id": "74d63686-d461-4472-bb71-653bb661eaff"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
@@ -526,9 +569,9 @@ environments:
   meta:
     id: env_972df7d3dba0143e72adca5c8787fb7d724ec8da
     created: 1765376399420
-    modified: 1766079206786
+    modified: 1766413773200
     isPrivate: false
   data:
     _baseurl: localhost:3333
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjYwNzkwNDgsImV4cCI6MTc2NjE2NTQ0OCwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.0YujaIoW3JTaMdhAEyeaL2XBHo9nFEZWMecxQpzVcEc
-    adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjYwNzkxNzMsImV4cCI6MTc2NjE2NTU3Mywic3ViIjoiN2ZjZTU0Y2YtNmFhYi00Njk2LThlMzctNDBiYmZiODI3ODJmIn0.NX2I5w97_E8-lpuPN3u0fTT7oQw0A7xY1rX5_vFa4q4
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjY0MTM3NTEsImV4cCI6MTc2NjUwMDE1MSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.plNqW8URy6ufWVWfINTjRjrYOLXgik3GjaTpyfHIMb4
+    adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjY0MTM3NTEsImV4cCI6MTc2NjUwMDE1MSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.plNqW8URy6ufWVWfINTjRjrYOLXgik3GjaTpyfHIMb4
