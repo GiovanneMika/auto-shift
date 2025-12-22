@@ -19,11 +19,12 @@ describe("Create Category Controller", () => {
         await connection.query(
             `INSERT INTO USERS (id, name, email, password, "isAdmin", created_at, driver_license) values('${id}', 'admin', 'admin@email.com', '${password}', true, 'now()', 'XXXXX-XXXX')`
         );
+        // await new Promise(resolve => setTimeout(resolve, 1500));
     });
 
     afterAll(async () => {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        await connection.dropDatabase();
+        // await new Promise(resolve => setTimeout(resolve, 1500));
+        // await connection.dropDatabase();
         await connection.close();
     });
 
@@ -32,6 +33,7 @@ describe("Create Category Controller", () => {
             email: "admin@email.com",
             password: "admin"
         });
+        // await new Promise(resolve => setTimeout(resolve, 1500));
         console.log("Response Token:", responseToken.body);
         const { token } = responseToken.body;
 
@@ -52,6 +54,7 @@ describe("Create Category Controller", () => {
             email: "admin@email.com",
             password: "admin"
         });
+        // await new Promise(resolve => setTimeout(resolve, 1500));
         console.log("Response Token:", responseToken.body);
         const { token } = responseToken.body;
 
@@ -63,6 +66,7 @@ describe("Create Category Controller", () => {
         ).set({
             Authorization: `Bearer ${token}`
         });
+        // await new Promise(resolve => setTimeout(resolve, 500));
         const response = await request(app).post("/categories").send(
             {
                 name: "Category Supertest Duplicate",
