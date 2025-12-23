@@ -5,6 +5,7 @@ import { inject, injectable } from "tsyringe";
 import dayjs from "dayjs";
 import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { In } from "typeorm";
+import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 
 interface IRequest {
     // definir os parâmetros necessários para criar um aluguel
@@ -18,6 +19,8 @@ class CreateRentalUseCase {
     constructor(
         @inject("RentalsRepository")
         private rentalsRepository: IRentalsRepository,
+        @inject("CarsRepository")
+        private carsRepository: ICarsRepository,
         @inject("DayjsDateProvider")
         private dateProvider: IDateProvider
     ) { }
@@ -49,6 +52,9 @@ class CreateRentalUseCase {
             car_id,
             expected_return_date,
         });
+
+        await this.carsRepository.updateAvailable(car_id, false);
+        
         return rental;
     }
 }
