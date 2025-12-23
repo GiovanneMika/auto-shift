@@ -528,7 +528,7 @@ collection:
         meta:
           id: req_74c5626400a9460fa09fcd9ad292f02e
           created: 1766412818081
-          modified: 1766413689736
+          modified: 1766496452128
           isPrivate: false
           description: ""
           sortKey: -1766412818081
@@ -538,11 +538,63 @@ collection:
           text: |-
             {
             	"expected_return_date": "2025-12-25T14:17:51.321Z",
-            	"car_id": "74d63686-d461-4472-bb71-653bb661eaff"
+            	"car_id": "500f9f5c-77f1-4a1b-92f3-75a3ae26b453"
             }
         headers:
           - name: Content-Type
             value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/rentals/devolution/7d39d509-9c4e-44dc-b702-045714ada30d"
+        name: Devolution
+        meta:
+          id: req_6aa74dd34a9b46ea9467d16ae574429f
+          created: 1766495245917
+          modified: 1766496968978
+          isPrivate: false
+          description: ""
+          sortKey: -1766495245917
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/rentals/user"
+        name: List by User
+        meta:
+          id: req_ab9891924adc4c769d6c1cb0f13da0a6
+          created: 1766498886902
+          modified: 1766498980215
+          isPrivate: false
+          description: ""
+          sortKey: -1766498886902
+        method: GET
+        headers:
           - name: User-Agent
             value: insomnia/12.2.0
             description: ""
