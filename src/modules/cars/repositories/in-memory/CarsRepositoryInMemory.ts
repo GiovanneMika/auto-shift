@@ -1,6 +1,8 @@
 import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { ICarsRepository } from "../ICarsRepository";
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+import { AppError } from "@shared/errors/AppError";
+import { v4 as uuidv4 } from "uuid";
 
 class CarsRepositoryInMemory implements ICarsRepository {
     cars: Car[] = [];
@@ -16,6 +18,9 @@ class CarsRepositoryInMemory implements ICarsRepository {
             category_id,
             id
         });
+        if (!car.id) {
+            car.id = uuidv4();
+        }
 
         this.cars.push(car);
         return car;
@@ -39,7 +44,6 @@ class CarsRepositoryInMemory implements ICarsRepository {
         if (category_id) {
             availableCars = availableCars.filter(car => car.category_id === category_id);
         }
-        console.log(availableCars);
 
         return availableCars;
     }
@@ -50,6 +54,9 @@ class CarsRepositoryInMemory implements ICarsRepository {
 
     async updateAvailable(id: string, available: boolean): Promise<void> {
         const index = this.cars.findIndex(car => car.id === id);
+        if (index === -1) {
+            throw new AppError("Car not found");
+        }
         this.cars[index].available = available;
     }
 }

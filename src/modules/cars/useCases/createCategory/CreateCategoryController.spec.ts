@@ -23,8 +23,8 @@ describe("Create Category Controller", () => {
     });
 
     afterAll(async () => {
-        // await new Promise(resolve => setTimeout(resolve, 1500));
-        // await connection.dropDatabase();
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        await connection.dropDatabase();
         await connection.close();
     });
 
@@ -54,7 +54,7 @@ describe("Create Category Controller", () => {
             email: "admin@email.com",
             password: "admin"
         });
-        // await new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 1500));
         console.log("Response Token:", responseToken.body);
         const { token } = responseToken.body;
 
@@ -66,7 +66,7 @@ describe("Create Category Controller", () => {
         ).set({
             Authorization: `Bearer ${token}`
         });
-        // await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 500));
         const response = await request(app).post("/categories").send(
             {
                 name: "Category Supertest Duplicate",

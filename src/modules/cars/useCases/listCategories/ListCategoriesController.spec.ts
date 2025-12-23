@@ -33,7 +33,7 @@ describe("List Categories Controller", () => {
 
     afterAll(async () => {
         await new Promise(resolve => setTimeout(resolve, 1500));
-        // await connection.dropDatabase();
+        await connection.dropDatabase();
         await connection.close();
     });
 
