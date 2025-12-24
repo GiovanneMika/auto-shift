@@ -21,15 +21,15 @@ class DayjsDateProvider implements IDateProvider {
     convertToUTC(date: Date): string {
         return dayjs(date).utc().local().format();
     }
-    
+
     dateNow(): Date {
         return dayjs().toDate();
     }
 
+    addDays(days: number): Date {
+        return dayjs().add(days, "days").toDate();
+    }
     // addHours(hours: number): Date {
-    //     throw new Error("Method not implemented.");
-    // }
-    // addDays(days: number): Date {
     //     throw new Error("Method not implemented.");
     // }
     // addMonths(months: number): Date {
