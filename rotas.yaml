@@ -173,7 +173,7 @@ collection:
         meta:
           id: req_bef6f5ac7fbb4392bd2c487231e32d37
           created: 1765455261888
-          modified: 1765907191469
+          modified: 1766584156877
           isPrivate: false
           description: ""
           sortKey: -1765455261888
@@ -182,7 +182,7 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"name":"Câmbio automático123",
+            	"name":"Câmbio automático123456",
             	"description": "AutoShifter"
             }
         headers:
@@ -195,7 +195,7 @@ collection:
         authentication:
           type: bearer
           disabled: false
-          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjU5MDYyOTksImV4cCI6MTc2NTk5MjY5OSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.cq3L0Q64FvyhDH9vP7Tw0TAOWyn8Atuao_eZDO1M0aw
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTc2NjU4NDE0NSwiZXhwIjoxNzY5MTc2MTQ1LCJzdWIiOiI3ZmNlNTRjZi02YWFiLTQ2OTYtOGUzNy00MGJiZmI4Mjc4MmYifQ.pSnu2TjUi9GULxkLhj6tsdoIKNYMxZc3zbiEyy0XYyU
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -230,38 +230,6 @@ collection:
             	"email": "givas@gmail.com",
             	"password": "123456",
             	"driver_license": "12345678901"
-            }
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/12.1.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: "{{ _._baseurl }}/sessions"
-        name: Session
-        meta:
-          id: req_e8d88cf46e6b4332ad21e0bb21eb1940
-          created: 1765903974722
-          modified: 1765905427048
-          isPrivate: false
-          description: ""
-          sortKey: -1765903974722
-        method: POST
-        body:
-          mimeType: application/json
-          text: |-
-            {
-            	"email": "givas@gmail.com",
-            	"password": "123456"
             }
         headers:
           - name: Content-Type
@@ -602,6 +570,77 @@ collection:
         authentication:
           type: bearer
           token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Authenticate
+    meta:
+      id: fld_4686cdf0946e405dbdc07751456d5f04
+      created: 1766583382979
+      modified: 1766583382979
+      sortKey: -1766583382979
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/sessions"
+        name: Session
+        meta:
+          id: req_e8d88cf46e6b4332ad21e0bb21eb1940
+          created: 1765903974722
+          modified: 1766583389446
+          isPrivate: false
+          description: ""
+          sortKey: -1766583389422
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "givas@gmail.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/refresh-token"
+        name: Refresh Token
+        meta:
+          id: req_ba7bba0a183d45ae9d72208c725b93e8
+          created: 1766583400705
+          modified: 1766584181979
+          isPrivate: false
+          description: ""
+          sortKey: -1766583400705
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTc2NjU4NDE0NSwiZXhwIjoxNzY5MTc2MTQ1LCJzdWIiOiI3ZmNlNTRjZi02YWFiLTQ2OTYtOGUzNy00MGJiZmI4Mjc4MmYifQ.pSnu2TjUi9GULxkLhj6tsdoIKNYMxZc3zbiEyy0XYyU"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
