@@ -4,5 +4,5 @@ import { DayjsDateProvider } from "./DateProvider/implementations/DayjsDateProvi
 
 container.registerSingleton<IDateProvider>(
     "DayjsDateProvider",
-    DayjsDateProvider // Replace with the actual implementation class
+    DayjsDateProvider
 );

@@ -29,9 +29,9 @@ class DayjsDateProvider implements IDateProvider {
     addDays(days: number): Date {
         return dayjs().add(days, "days").toDate();
     }
-    // addHours(hours: number): Date {
-    //     throw new Error("Method not implemented.");
-    // }
+    addHours(hours: number): Date {
+        return dayjs().add(hours, "hours").toDate();
+    }
     // addMonths(months: number): Date {
     //     throw new Error("Method not implemented.");
     // }
