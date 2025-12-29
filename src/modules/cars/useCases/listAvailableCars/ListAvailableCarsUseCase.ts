@@ -6,7 +6,7 @@ import { inject, injectable } from "tsyringe";
 interface IRequest {
     category_id?: string;
     name?: string;
-    brand?: string;
+    brand_id?: string;
 }
 @injectable()
 class ListAvailableCarsUseCase {
@@ -16,8 +16,8 @@ class ListAvailableCarsUseCase {
         private carsRepository: ICarsRepository
     ) { }
 
-    async execute({ brand, category_id, name }: IRequest): Promise<Car[]> {
-        const cars = await this.carsRepository.findAvailable(brand, category_id, name);
+    async execute({ brand_id, category_id, name }: IRequest): Promise<Car[]> {
+        const cars = await this.carsRepository.findAvailable(brand_id, category_id, name);
         return cars;
 
     }
