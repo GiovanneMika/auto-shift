@@ -17,7 +17,7 @@ class UploadBrandLogoUseCase {
     async execute({ brandId, logoFile }: IRequest): Promise<void> {
         const brand = await this.brandsRepository.findById(brandId);
         if (brand.logo) {
-            await deleteFile(`./tmp/avatar/${brand.logo}`);
+            await deleteFile(`./tmp/logos/${brand.logo}`);
         }
         brand.logo = logoFile;
 
