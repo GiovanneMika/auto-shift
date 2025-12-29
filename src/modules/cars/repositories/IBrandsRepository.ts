@@ -13,6 +13,7 @@ interface IBrandsRepository {
     findByName(name: string): Promise<Brand>;
     findById(id: string): Promise<Brand>;
     list(): Promise<Brand[]>;
+    delete(id: string): Promise<void>;
 
 }
 
