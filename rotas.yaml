@@ -148,7 +148,7 @@ collection:
         meta:
           id: req_0dea7aff536b40d39d667009e326fa30
           created: 1765453937020
-          modified: 1765974481271
+          modified: 1767011703894
           isPrivate: false
           description: ""
           sortKey: -1765455216327
@@ -160,6 +160,7 @@ collection:
             disabled: false
         authentication:
           type: bearer
+          disabled: false
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -173,7 +174,7 @@ collection:
         meta:
           id: req_bef6f5ac7fbb4392bd2c487231e32d37
           created: 1765455261888
-          modified: 1766584156877
+          modified: 1767011894718
           isPrivate: false
           description: ""
           sortKey: -1765455261888
@@ -195,7 +196,7 @@ collection:
         authentication:
           type: bearer
           disabled: false
-          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTc2NjU4NDE0NSwiZXhwIjoxNzY5MTc2MTQ1LCJzdWIiOiI3ZmNlNTRjZi02YWFiLTQ2OTYtOGUzNy00MGJiZmI4Mjc4MmYifQ.pSnu2TjUi9GULxkLhj6tsdoIKNYMxZc3zbiEyy0XYyU
+          token: "{{ _.token }}"
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -283,38 +284,6 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _._baseurl }}/sessions"
-        name: Session Admin
-        meta:
-          id: req_f2b071edf3b442e5af99cfde14b2c694
-          created: 1766079153241
-          modified: 1766079171349
-          isPrivate: false
-          description: ""
-          sortKey: -1765899201773.5
-        method: POST
-        body:
-          mimeType: application/json
-          text: |-
-            {
-            	"email": "admin@email.com",
-            	"password": "admin"
-            }
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/12.1.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
   - name: Cars
     meta:
       id: fld_6bdaf83b2c8e44a78e746b5ddafb27ef
@@ -328,7 +297,7 @@ collection:
         meta:
           id: req_f0c62a6b997a47d095074b284b715195
           created: 1766074311421
-          modified: 1766148373117
+          modified: 1767024107165
           isPrivate: false
           description: ""
           sortKey: -1766074311421
@@ -340,9 +309,9 @@ collection:
                 "name": "Fit",
                 "description": "Hatch versátil",
                 "daily_rate": 130,
-                "license_plate": "FIT2025",
+                "license_plate": "FIT20225",
                 "fine_amount": 950,
-                "brand": "Honda",
+                "brand_id": "36ec7d08-093d-4143-850d-89660a894c77",
                 "category_id": "9ddff0b4-5327-4418-a5bc-504fa111ec1d"
               }
         headers:
@@ -368,14 +337,14 @@ collection:
         meta:
           id: req_fbf193a11f0240cd8d7a9bd29679d58b
           created: 1766147415017
-          modified: 1766157016738
+          modified: 1767029591591
           isPrivate: false
           description: ""
           sortKey: -1766147415017
         method: GET
         parameters:
-          - name: brand
-            value: Chevrolet
+          - name: brand_id
+            value: 36ec7d08-093d-4143-850d-89660a894c77
             description: ""
             disabled: true
           - name: name
@@ -591,7 +560,7 @@ collection:
         meta:
           id: req_e8d88cf46e6b4332ad21e0bb21eb1940
           created: 1765903974722
-          modified: 1766583389446
+          modified: 1767007074666
           isPrivate: false
           description: ""
           sortKey: -1766583389422
@@ -601,7 +570,39 @@ collection:
           text: |-
             {
             	"email": "givas@gmail.com",
-            	"password": "123456"
+            	"password": "121212"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/sessions"
+        name: Session Admin
+        meta:
+          id: req_f2b071edf3b442e5af99cfde14b2c694
+          created: 1766079153241
+          modified: 1767017051897
+          isPrivate: false
+          description: ""
+          sortKey: -1766583400805
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "admin@email.com",
+            	"password": "admin"
             }
         headers:
           - name: Content-Type
@@ -623,7 +624,7 @@ collection:
         meta:
           id: req_ba7bba0a183d45ae9d72208c725b93e8
           created: 1766583400705
-          modified: 1766584181979
+          modified: 1767011921906
           isPrivate: false
           description: ""
           sortKey: -1766583400705
@@ -632,7 +633,7 @@ collection:
           mimeType: application/json
           text: >-
             {
-            	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTc2NjU4NDE0NSwiZXhwIjoxNzY5MTc2MTQ1LCJzdWIiOiI3ZmNlNTRjZi02YWFiLTQ2OTYtOGUzNy00MGJiZmI4Mjc4MmYifQ.pSnu2TjUi9GULxkLhj6tsdoIKNYMxZc3zbiEyy0XYyU"
+            	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpdmFzQGdtYWlsLmNvbSIsImlhdCI6MTc2NzAxMTQ5OCwiZXhwIjoxNzY5NjAzNDk4LCJzdWIiOiIxYzhkZTlhZi01ZDgzLTRkODUtOGZlYi0yYjc5ZWUyYjI3ZDAifQ.Bx0Z8Uv_YfYGETuGA8lpzLt12VnUxPZGlwh-wVOvUxc"
             }
         headers:
           - name: Content-Type
@@ -641,6 +642,241 @@ collection:
             value: insomnia/12.2.0
             description: ""
             disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Password
+    meta:
+      id: fld_faf927d31cef4fd6bba113b261ce9af7
+      created: 1767006609032
+      modified: 1767006609032
+      sortKey: -1767006609032
+      description: ""
+    children:
+      - url: http://localhost:3333/password/reset?token=7f271b36-0f87-4633-bb09-359e7e896cc2
+        name: ResetPassword
+        meta:
+          id: req_f926c702e9a44a08a22337ae58e2f69a
+          created: 1767006623423
+          modified: 1767007062881
+          isPrivate: false
+          description: ""
+          sortKey: -1767006623423
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"password": "121212"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/password/forgot"
+        name: SendForgotMail
+        meta:
+          id: req_39d1f9de144b4ff68669e1a1b9a81265
+          created: 1767006628797
+          modified: 1767006856853
+          isPrivate: false
+          description: ""
+          sortKey: -1767006628797
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "email": "givas@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Brands
+    meta:
+      id: fld_03d0ce4361da47b18ef7e1d671ee80ed
+      created: 1767013213587
+      modified: 1767013213587
+      sortKey: -1767013213587
+      description: ""
+    children:
+      - url: "{{ _._baseurl }}/brands"
+        name: Create
+        meta:
+          id: req_2bb8c52efe9740bf83e4660d4633780e
+          created: 1767013232927
+          modified: 1767026435387
+          isPrivate: false
+          description: ""
+          sortKey: -1767013232927
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "BYD"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/brands"
+        name: Search
+        meta:
+          id: req_b9922b8b80f246f3bf919ecb6015ac4a
+          created: 1767017849449
+          modified: 1767027425728
+          isPrivate: false
+          description: ""
+          sortKey: -1767017849449
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/brands/logo/38cad17a-e13a-4a36-98da-6c42b8aec5d4"
+        name: Upload Logo
+        meta:
+          id: req_3573ef0c7b6f4574b74fc9637ac818b4
+          created: 1767019340451
+          modified: 1767027761936
+          isPrivate: false
+          description: ""
+          sortKey: -1767019340451
+        method: PATCH
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: logo
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\giova\Desktop\Volkswagen_-_Logo.svg.png
+              type: file
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/brands/48c6dcc4-c762-43b4-b18a-cff39aa3a6bd"
+        name: Delete Brand
+        meta:
+          id: req_c9c3f25d259648a0b684c5bacd1bc175
+          created: 1767027343040
+          modified: 1767029501812
+          isPrivate: false
+          description: ""
+          sortKey: -1767027343040
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _._baseurl }}/brands/48c6dcc4-c762-43b4-b18a-cff39aa3a6bd"
+        name: Update Brand
+        meta:
+          id: req_aff0b1f5d9964ac081d2333944380e0c
+          created: 1767028235100
+          modified: 1767029509694
+          isPrivate: false
+          description: ""
+          sortKey: -1767028235100
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "BYD12345"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.adminToken }}"
         settings:
           renderRequestBody: true
           encodeUrl: true
@@ -660,9 +896,9 @@ environments:
   meta:
     id: env_972df7d3dba0143e72adca5c8787fb7d724ec8da
     created: 1765376399420
-    modified: 1766413773200
+    modified: 1767028711221
     isPrivate: false
   data:
     _baseurl: localhost:3333
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjY0MTM3NTEsImV4cCI6MTc2NjUwMDE1MSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.plNqW8URy6ufWVWfINTjRjrYOLXgik3GjaTpyfHIMb4
-    adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjY0MTM3NTEsImV4cCI6MTc2NjUwMDE1MSwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.plNqW8URy6ufWVWfINTjRjrYOLXgik3GjaTpyfHIMb4
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjcwMTE0OTgsImV4cCI6MTc2NzAxMjM5OCwic3ViIjoiMWM4ZGU5YWYtNWQ4My00ZDg1LThmZWItMmI3OWVlMmIyN2QwIn0.pwGHrK_2ckUv9TwpTYvAWY0W2pwnYBynVgG-vh2i6Ds
+    adminToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjcwMjg3MDIsImV4cCI6MTc2NzAyOTYwMiwic3ViIjoiN2ZjZTU0Y2YtNmFhYi00Njk2LThlMzctNDBiYmZiODI3ODJmIn0.Mc0Ax418PwZjsbsRppWQiuPv1LoGhHly9aAqBOCqpio
