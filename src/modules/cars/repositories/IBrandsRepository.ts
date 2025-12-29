@@ -1,12 +1,18 @@
 import { Brand } from "../infra/typeorm/entities/Brand";
 
+interface ICreateBrandDTO {
+    id?: string;
+    name: string;
+    logo?: string;
+}
 
 
 interface IBrandsRepository {
 
-    create(name: string, logo?: string): Promise<Brand>;
+    create({ name, logo }: ICreateBrandDTO): Promise<Brand>;
     findByName(name: string): Promise<Brand>;
+    findById(id: string): Promise<Brand>;
 
 }
 
-export { IBrandsRepository };
+export { IBrandsRepository, ICreateBrandDTO };

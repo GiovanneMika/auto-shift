@@ -25,7 +25,7 @@ describe("Create Rental", () => {
             daily_rate: 100,
             license_plate: "ABC-1234",
             fine_amount: 40,
-            brand: "Brand",
+            brand_id: "Brand",
             category_id: "category123",
         });
         const rental = await createRentalUseCase.execute({
@@ -48,7 +48,7 @@ describe("Create Rental", () => {
             daily_rate: 100,
             license_plate: "ABC-1234",
             fine_amount: 40,
-            brand: "Brand",
+            brand_id: "Brand",
             category_id: "category123",
         });
 
@@ -58,7 +58,7 @@ describe("Create Rental", () => {
             daily_rate: 100,
             license_plate: "DEF-5678",
             fine_amount: 40,
-            brand: "Brand",
+            brand_id: "Brand",
             category_id: "category123",
         });
 
@@ -85,7 +85,7 @@ describe("Create Rental", () => {
             daily_rate: 100,
             license_plate: "ABC-1234",
             fine_amount: 40,
-            brand: "Brand",
+            brand_id: "Brand",
             category_id: "category123",
         });
 
@@ -115,7 +115,7 @@ describe("Create Rental", () => {
             daily_rate: 100,
             license_plate: "ABC-1234",
             fine_amount: 40,
-            brand: "Brand",
+            brand_id: "Brand",
             category_id: "category123",
         });
         expect(

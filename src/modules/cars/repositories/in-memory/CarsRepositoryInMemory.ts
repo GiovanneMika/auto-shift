@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 class CarsRepositoryInMemory implements ICarsRepository {
     cars: Car[] = [];
-    async create({ name, description, daily_rate, license_plate, fine_amount, brand, category_id, id }: ICreateCarDTO): Promise<Car> {
+    async create({ name, description, daily_rate, license_plate, fine_amount, brand_id, category_id, id }: ICreateCarDTO): Promise<Car> {
         const car = new Car();
         Object.assign(car, {
             name,
@@ -14,7 +14,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
             daily_rate,
             license_plate,
             fine_amount,
-            brand,
+            brand_id,
             category_id,
             id
         });
@@ -30,11 +30,11 @@ class CarsRepositoryInMemory implements ICarsRepository {
         return await this.cars.find(car => car.license_plate === license_plate);
     }
 
-    async findAvailable(brand?: string, category_id?: string, name?: string): Promise<Car[]> {
+    async findAvailable(brand_id?: string, category_id?: string, name?: string): Promise<Car[]> {
         let availableCars = this.cars.filter(car => car.available === true);
 
-        if (brand) {
-            availableCars = availableCars.filter(car => car.brand === brand);
+        if (brand_id) {
+            availableCars = availableCars.filter(car => car.brand_id === brand_id);
         }
 
         if (name) {
