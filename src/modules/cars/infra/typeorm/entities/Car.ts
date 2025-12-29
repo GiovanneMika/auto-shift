@@ -27,23 +27,23 @@ class Car {
     @Column()
     fine_amount: number;
 
+    @Column()
+    brand_id: string;
+    
     @ManyToOne(() => Brand)
     @JoinColumn({ name: "brand_id" })
     brand: Brand;
 
-    @Column()
-    brand_id: string;
-
     @CreateDateColumn()
     created_at: Date;
+    
+    @Column()
+    category_id: string;
 
     @ManyToOne(() => Category)
     @JoinColumn({ name: "category_id" })
     category: Category;
-
-    @Column()
-    category_id: string;
-
+    
     @ManyToMany(() => Specification)
     @JoinTable({
         name: "specifications_cars",
