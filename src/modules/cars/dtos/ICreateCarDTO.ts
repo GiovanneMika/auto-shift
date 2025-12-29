@@ -7,7 +7,7 @@ interface ICreateCarDTO {
     daily_rate: number;
     license_plate: string;
     fine_amount: number;
-    brand: string;
+    brand_id: string;
     category_id: string;
     specifications?: Specification[];
     id?: string;
