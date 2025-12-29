@@ -2,6 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, Ma
 import { v4 as uuidV4 } from "uuid";
 import { Category } from "./Category";
 import { Specification } from "./Specification";
+import { Brand } from "./Brand";
 
 @Entity("cars")
 class Car {
@@ -26,7 +27,9 @@ class Car {
     @Column()
     fine_amount: number;
 
-    
+    @ManyToOne(() => Brand)
+    @JoinColumn({ name: "brand_id" })
+    brand: Brand;
 
     @Column()
     brand_id: string;

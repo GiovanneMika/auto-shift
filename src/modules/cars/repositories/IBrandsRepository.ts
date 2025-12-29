@@ -12,6 +12,7 @@ interface IBrandsRepository {
     create({ name, logo }: ICreateBrandDTO): Promise<Brand>;
     findByName(name: string): Promise<Brand>;
     findById(id: string): Promise<Brand>;
+    list(): Promise<Brand[]>;
 
 }
 

@@ -9,23 +9,27 @@ class BrandsRepository implements IBrandsRepository {
     constructor() {
         this.repository = getRepository(Brand);
     }
-
-    async findByName(name: string): Promise<Brand> {
-        const brand = await this.repository.findOne({ name });
-        return brand;
-    }
-
-    async findById(id: string): Promise<Brand> {
-        const brand = await this.repository.findOne(id);
-        return brand;
-    }
-
+    
     async create({ id, name, logo }: ICreateBrandDTO): Promise<Brand> {
         const brand = this.repository.create({ id, name, logo });
         await this.repository.save(brand);
         return brand;
     }
-
+    async findByName(name: string): Promise<Brand> {
+        const brand = await this.repository.findOne({ name });
+        return brand;
+    }
+    
+    async findById(id: string): Promise<Brand> {
+        const brand = await this.repository.findOne(id);
+        return brand;
+    }
+    
+    
+    async list(): Promise<Brand[]> {
+        const brands = await this.repository.find();
+        return brands;
+    }
 }
 
 export { BrandsRepository }
