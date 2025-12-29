@@ -22,7 +22,7 @@ class CreateBrandUseCase {
         if (brandAlreadyExists) {
             throw new AppError("This brand already exists!");
         }
-        const brand = await this.brandsRepository.create(name);
+        const brand = await this.brandsRepository.create({ name });
         return brand;
     }
 
