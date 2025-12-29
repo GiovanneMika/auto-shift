@@ -28,7 +28,7 @@ describe("List Categories Controller", () => {
         await new Promise(resolve => setTimeout(resolve, 500));
 
         console.log("Response Token:", responseToken.body);
-        token = responseToken.body.token;
+        ({ refresh_token: token } = responseToken.body);
     });
 
     afterAll(async () => {

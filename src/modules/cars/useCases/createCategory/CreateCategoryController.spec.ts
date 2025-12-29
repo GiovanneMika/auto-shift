@@ -35,7 +35,7 @@ describe("Create Category Controller", () => {
         });
         // await new Promise(resolve => setTimeout(resolve, 1500));
         console.log("Response Token:", responseToken.body);
-        const { token } = responseToken.body;
+        const { refresh_token } = responseToken.body;
 
         const response = await request(app).post("/categories").send(
             {
@@ -43,7 +43,7 @@ describe("Create Category Controller", () => {
                 description: "Category Supertest24"
             }
         ).set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token}`
         });
 
         expect(response.status).toBe(201);
@@ -56,7 +56,7 @@ describe("Create Category Controller", () => {
         });
         await new Promise(resolve => setTimeout(resolve, 1500));
         console.log("Response Token:", responseToken.body);
-        const { token } = responseToken.body;
+        const { refresh_token } = responseToken.body;
 
         await request(app).post("/categories").send(
             {
@@ -64,7 +64,7 @@ describe("Create Category Controller", () => {
                 description: "Category Supertest"
             }
         ).set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token}`
         });
         await new Promise(resolve => setTimeout(resolve, 500));
         const response = await request(app).post("/categories").send(
@@ -73,7 +73,7 @@ describe("Create Category Controller", () => {
                 description: "Category Supertest"
             }
         ).set({
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${refresh_token}`
         });
 
         expect(response.status).toBe(400);
