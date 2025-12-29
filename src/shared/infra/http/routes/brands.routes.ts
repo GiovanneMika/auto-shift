@@ -7,6 +7,7 @@ import { CreateBrandController } from "@modules/cars/useCases/createBrand/Create
 import { UploadBrandLogoController } from "@modules/cars/useCases/uploadBrandLogo/UploadBrandLogoController";
 import { ListBrandsController } from "@modules/cars/useCases/listBrands/ListBrandsController";
 import { DeleteBrandController } from "@modules/cars/useCases/deleteBrand/DeleteBrandController";
+import { UpdateBrandController } from "@modules/cars/useCases/updateBrand/UpdateBrandController";
 
 const uploadLogo = multer(uploadConfig.upload("./tmp/logos"));
 
@@ -14,6 +15,7 @@ const createBrandController = new CreateBrandController();
 const uploadBrandLogoController = new UploadBrandLogoController();
 const listBrandsController = new ListBrandsController();
 const deleteBrandController = new DeleteBrandController();
+const updateBrandController = new UpdateBrandController();
 
 const brandsRoutes = Router();
 
@@ -24,5 +26,7 @@ brandsRoutes.patch("/logo/:id", ensureAuthenticated, ensureAdmin, uploadLogo.sin
 brandsRoutes.get("/", ensureAuthenticated, ensureAdmin, listBrandsController.handle);
 
 brandsRoutes.delete("/:id", ensureAuthenticated, ensureAdmin, deleteBrandController.handle);
+
+brandsRoutes.put("/:id", ensureAuthenticated, ensureAdmin, updateBrandController.handle)
 
 export { brandsRoutes };
